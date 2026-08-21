@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lucas Nishimura</title>
+<meta name="description" content="Portfólio de Lucas Nishimura. Sistemas de operação, automação de processos e segurança: quatro em produção, em três setores." />
+<meta name="author" content="Lucas Nishimura" />
+<link rel="canonical" href="https://lucasvnd.github.io/" />
+
+<meta property="og:type" content="profile" />
+<meta property="og:site_name" content="Lucas Nishimura" />
+<meta property="og:title" content="Lucas Nishimura" />
+<meta property="og:description" content="Sistemas de operação, automação de processos e segurança. Quatro em produção, em três setores." />
+<meta property="og:url" content="https://lucasvnd.github.io/" />
+<meta property="og:locale" content="pt_BR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:image" content="https://lucasvnd.github.io/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Lucas Nishimura" />
+<meta name="twitter:description" content="Sistemas de operação, automação de processos e segurança. Quatro em produção, em três setores." />
+<meta name="twitter:image" content="https://lucasvnd.github.io/og.png" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2328518C'/%3E%3Cpath d='M8 7h3v14h8v3H8z' fill='%23fff'/%3E%3Crect x='19' y='7' width='5' height='3' fill='%23fff'/%3E%3C/svg%3E" />
+<meta name="theme-color" content="#EDEDE7" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#15161A" media="(prefers-color-scheme: dark)" />
+
+<link rel="stylesheet" href="./styles.css" />
+
+<script>
+  /* Antes da primeira pintura: sem isso, quem usa tema claro leva um flash
+     escuro (e vice-versa) a cada carregamento. */
+  (function () {
+    try {
+      var t = localStorage.getItem('portfolio-theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      var l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('portfolio-lang');
+      if (l === 'en' || l === 'pt') document.documentElement.lang = l === 'en' ? 'en' : 'pt-BR';
+    } catch (e) { /* localStorage bloqueado: os padrões seguem valendo */ }
+  })();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Lucas Nishimura",
+  "url": "https://lucasvnd.github.io/",
+  "email": "mailto:lucasmrnbr@gmail.com",
+  "jobTitle": "Desenvolvedor de software",
+  "description": "Desenvolvimento de software, automação e segurança.",
+  "sameAs": ["https://www.linkedin.com/in/lucas-nishimura"],
+  "knowsAbout": ["n8n", "Next.js", "TypeScript", "Python", "PostgreSQL", "Automação de processos", "Segurança da informação"]
+}
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main" data-i18n="ui.skipToContent">Pular para o conteúdo</a>
+
+<header class="masthead">
+  <div class="shell masthead-inner">
+    <a class="brand" href="#top">
+      <span class="ident">LN</span>
+      <span class="brand-name">Lucas Nishimura</span>
+    </a>
+    <nav aria-label="Seções">
+      <a href="#sistemas" data-i18n="nav.systems">Sistemas</a>
+      <a href="#metodo" data-i18n="nav.method">Método</a>
+      <a href="#automacoes" data-i18n="nav.automations">Automações</a>
+    </nav>
+    <div class="masthead-tools">
+      <div class="lang-switch" id="lang-switch" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" class="icon-button" id="theme-toggle" aria-label="Alternar tema">
+        <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4">
+          <circle cx="8" cy="8" r="4" /><path d="M8 .8v1.6M8 13.6v1.6M.8 8h1.6M13.6 8h1.6M2.9 2.9l1.1 1.1M12 12l1.1 1.1M13.1 2.9L12 4M4 12l-1.1 1.1" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <div id="top"></div>
+
+  <!-- Perfil: abre como uma página de perfil, não como um anúncio. -->
+  <section class="shell profile">
+    <div class="profile-main">
+      <h1>Lucas Nishimura</h1>
+      <p class="profile-role" data-i18n="profile.role"></p>
+      <ul class="profile-links" id="profile-links"></ul>
+      <p class="profile-bio" data-i18n="profile.bio"></p>
+      <p class="profile-disclosure" data-i18n="profile.disclosure"></p>
+    </div>
+    <dl class="facts" id="facts" aria-label="Números"></dl>
+  </section>
+
+  <section class="shell section" id="sistemas">
+    <div class="section-head">
+      <h2 data-i18n="systems.title"></h2>
+      <p class="section-note" data-i18n="systems.note"></p>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filtrar"></div>
+    <div class="system-grid" id="system-grid"></div>
+  </section>
+
+  <section class="shell section" id="metodo">
+    <div class="section-head">
+      <h2 data-i18n="method.title"></h2>
+      <p class="section-note" data-i18n="method.note"></p>
+    </div>
+    <div class="exhibits" id="exhibits"></div>
+  </section>
+
+  <section class="shell section" id="automacoes">
+    <div class="section-head">
+      <h2 data-i18n="automations.title"></h2>
+      <p class="section-note" data-i18n="automations.note"></p>
+    </div>
+    <div class="auto-list" id="auto-list"></div>
+    <p class="auto-note" data-i18n="automations.diagramNote"></p>
+  </section>
+</main>
+
+<footer class="shell site-footer">
+  <span id="footer-contact"></span>
+  <span id="footer-year"></span>
+</footer>
+
+<dialog class="record-dialog" id="record-dialog" aria-label="Detalhes do sistema">
+  <div class="dialog-head">
+    <span class="ident" id="dialog-ident"></span>
+    <button type="button" class="dialog-close" id="dialog-close" aria-label="Fechar">
+      <svg viewBox="0 0 16 16" width="11" height="11" aria-hidden="true" stroke="currentColor" stroke-width="1.6"><path d="M3 3l10 10M13 3L3 13" /></svg>
+    </button>
+  </div>
+  <div class="dialog-body" id="dialog-body"></div>
+</dialog>
+
+<noscript>
+  <p style="padding:2rem;text-align:center">Este portfólio precisa de JavaScript para montar o conteúdo nos dois idiomas. Escreva para lucasmrnbr@gmail.com.</p>
+</noscript>
+
+<script type="module" src="./script.js"></script>
+</body>
+</html>
