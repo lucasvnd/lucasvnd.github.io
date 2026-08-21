@@ -83,6 +83,15 @@ for (const [i, a] of CONTENT.automations.items.entries()) {
   if (!KNOWN_DIAGRAMS.has(a.diagram)) fail(`automations.items[${i}]: diagrama desconhecido: "${a.diagram}"`);
 }
 
+/* ------------------------------------------- 3b. experiencia preenchida --- */
+
+for (const [i, r] of CONTENT.experience.roles.entries()) {
+  const where = `experience.roles[${i}] (${typeof r.org === 'string' ? r.org : r.org.pt})`;
+  const per = r.period && r.period.pt;
+  if (!per || /A{4}/.test(per)) fail(`${where}: periodo por preencher ("${per}")`);
+  if (!r.role || !r.detail) fail(`${where}: falta cargo ou descricao`);
+}
+
 /* ------------------------------------- 4. rede de segurança de privacidade --- */
 
 /* Lista local de termos que não devem aparecer no conteúdo publicado.

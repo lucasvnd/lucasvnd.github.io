@@ -25,6 +25,7 @@ export const CONTENT = {
   },
 
   nav: {
+    experience: pair('Experiência', 'Experience'),
     systems: pair('Sistemas', 'Systems'),
     method: pair('Método', 'Method'),
     automations: pair('Automações', 'Automation'),
@@ -33,15 +34,15 @@ export const CONTENT = {
 
   /* Bloco de perfil: quem, o que, como falar. Nada de manchete nem chamada. */
   profile: {
-    role: pair('Desenvolvimento de software, automação e segurança',
-               'Software development, automation and security'),
+    role: pair('Segurança da informação, automação e desenvolvimento assistido por IA',
+               'Information security, automation and AI-assisted development'),
     bio: pair(
-      'Atuo no ciclo completo dos sistemas listados abaixo: modelagem do domínio, arquitetura, implementação, integração com sistemas de terceiros, publicação e operação. O desenvolvimento é assistido por IA em todas as etapas, e cada decisão de arquitetura fica registrada em documento versionado junto ao código.',
-      'I work across the full cycle of the systems listed below: domain modelling, architecture, implementation, third-party integration, deployment and operation. Development is AI-assisted at every stage, and each architectural decision is recorded in a document versioned alongside the code.'
+      'Dezessete anos em TI corporativa e infraestrutura, os últimos oito em segurança da informação, no Brasil e na Nova Zelândia. Entre 2025 e 2026 entreguei os sistemas e automações listados abaixo, atuando no ciclo completo: modelagem do domínio, arquitetura, implementação, integração com sistemas de terceiros, publicação e operação. O desenvolvimento foi assistido por IA em todas as etapas, e cada decisão de arquitetura ficou registrada em documento versionado junto ao código.',
+      'Seventeen years in enterprise IT and infrastructure, the last eight in information security, in Brazil and New Zealand. Between 2025 and 2026 I delivered the systems and automations listed below, working across the full cycle: domain modelling, architecture, implementation, third-party integration, deployment and operation. Development was AI-assisted at every stage, and each architectural decision was recorded in a document versioned alongside the code.'
     ),
     disclosure: pair(
-      'Os sistemas são privados e atendem clientes reais. Apresentados aqui de forma sanitizada: sem código, sem credenciais, sem dados de clientes. Clientes identificados por setor.',
-      'The systems are private and serve real clients. Presented here in sanitized form: no code, no credentials, no client data. Clients identified by sector.'
+      'Os sistemas são privados e foram entregues a clientes reais. Apresentados aqui de forma sanitizada: sem código, sem credenciais, sem dados de clientes. Clientes identificados por setor.',
+      'The systems are private and were delivered to real clients. Presented here in sanitized form: no code, no credentials, no client data. Clients identified by sector.'
     )
   },
 
@@ -49,11 +50,104 @@ export const CONTENT = {
   facts: [
     { k: pair('Sistemas em produção', 'Systems in production'), v: '4' },
     { k: pair('Setores', 'Sectors'), v: '3' },
-    { k: pair('Fluxos de automação em produção', 'Automation flows in production'), v: '~25' },
+    { k: pair('Fluxos de automação entregues', 'Automation flows delivered'), v: '~70' },
     { k: pair('Commits nos sistemas listados', 'Commits across listed systems'), v: '2.573', vEn: '2,573' },
     { k: pair('Decisões de arquitetura registradas', 'Architecture decisions on record'), v: '149' },
     { k: pair('Arquivos de teste', 'Test files'), v: '311' }
   ],
+
+  /* Experiencia: tabela densa, para a pagina servir de curriculo sem virar um.
+     PREENCHER as datas. O validador recusa enquanto houver "AAAA". */
+  /* Experiencia: espelha exatamente o que o LinkedIn ja mostra publicamente.
+     Nada declarado aqui vai alem do registro publico. */
+  experience: {
+    title: pair('Experiência', 'Experience'),
+    note: pair('Dezessete anos em TI corporativa e infraestrutura, os últimos oito em segurança.',
+               'Seventeen years in enterprise IT and infrastructure, the last eight in security.'),
+    roles: [
+      {
+        period: pair('2026 - hoje', '2026 - present'),
+        role: pair('Cyber Security Specialist', 'Cyber Security Specialist'),
+        org: 'Hidrovias do Brasil',
+        detail: pair(
+          'Operação de segurança corporativa em ambiente industrial e logístico.',
+          'Corporate security operations in an industrial and logistics environment.'
+        )
+      },
+      {
+        period: pair('2025 - 2026', '2025 - 2026'),
+        role: pair('AI and Automation Specialist', 'AI and Automation Specialist'),
+        org: 'Nishimura Tech Solutions',
+        detail: pair(
+          'Entrega dos sistemas e automações listados abaixo: análise, arquitetura, implementação, publicação e operação.',
+          'Delivery of the systems and automations listed below: analysis, architecture, implementation, deployment and operation.'
+        )
+      },
+      {
+        period: pair('2025', '2025'),
+        role: pair('AI and Innovation Head', 'AI and Innovation Head'),
+        org: 'TopSend Comunicação Integrada',
+        detail: pair(
+          'Entrega de agentes de IA para clientes da agência e para a operação interna dela.',
+          'Delivery of AI agents for the agency clients and for its own internal operation.'
+        )
+      },
+      {
+        period: pair('2025', '2025'),
+        role: pair('AI and Automation Specialist', 'AI and Automation Specialist'),
+        org: 'YachtMind',
+        detail: pair(
+          'Fluxos de consulta a APIs e apresentação de dados para um agente de IA, atendendo um cliente do setor náutico.',
+          'API lookup and data presentation flows for an AI agent, serving a client in the yachting sector.'
+        )
+      },
+      {
+        period: pair('2023 - 2025', '2023 - 2025'),
+        role: pair('Security Operations and Reporting Analyst', 'Security Operations and Reporting Analyst'),
+        org: 'Caldic',
+        detail: pair(
+          'Alocado pela Amaris Consulting. Scripts de extração de dados de segurança do Entra ID e do API Defender, gestão de identidades e acessos, políticas, auditorias e ISO 27001.',
+          'Placed through Amaris Consulting. Scripts extracting security data from Entra ID and API Defender, identity and access management, policies, audits and ISO 27001.'
+        )
+      },
+      {
+        period: pair('2022 - 2023', '2022 - 2023'),
+        role: pair('Analista de Segurança Sênior', 'Senior Security Analyst'),
+        org: 'ICBC Bank',
+        detail: pair(
+          'Resposta a incidentes, reestruturação do Active Directory e reforço dos protocolos de segurança.',
+          'Incident response, Active Directory restructuring and strengthening of security protocols.'
+        )
+      },
+      {
+        period: pair('2020 - 2022', '2020 - 2022'),
+        role: pair('Analista de Segurança Sênior', 'Senior Security Analyst'),
+        org: 'Banco Pine',
+        detail: pair(
+          'Baselines de segurança e controles de conformidade regulatória em ambiente financeiro.',
+          'Security baselines and regulatory compliance controls in a financial environment.'
+        )
+      },
+      {
+        period: pair('2018 - 2019', '2018 - 2019'),
+        role: pair('ICT Project Manager', 'ICT Project Manager'),
+        org: 'Wizbang Technologies',
+        detail: pair(
+          'Nova Zelândia. Gestão de projetos de infraestrutura, com as primeiras responsabilidades de segurança.',
+          'New Zealand. Infrastructure project management, including the first security responsibilities.'
+        )
+      },
+      {
+        period: pair('2009 - 2016', '2009 - 2016'),
+        role: pair('Infraestrutura e suporte de TIC', 'ICT infrastructure and support'),
+        org: pair('Nova Zelândia e Brasil', 'New Zealand and Brazil'),
+        detail: pair(
+          'Dimension Data na Nova Zelândia; Gávea Investments, BTG Pactual, Scopus, Wittel e Consulado Britânico no Brasil.',
+          'Dimension Data in New Zealand; Gávea Investments, BTG Pactual, Scopus, Wittel and the British Consulate General in Brazil.'
+        )
+      }
+    ]
+  },
 
   systems: {
     eyebrow: pair('SISTEMAS', 'SYSTEMS'),
@@ -303,8 +397,8 @@ export const CONTENT = {
   automations: {
     eyebrow: pair('AUTOMAÇÕES', 'AUTOMATION'),
     title: pair('Automações', 'Automation'),
-    note: pair('Cerca de 25 fluxos autorais em produção, organizados em três sistemas.',
-               'Around 25 authored flows in production, organized into three systems.'),
+    note: pair('Cerca de 70 fluxos autorais entregues. Os três sistemas abaixo são os mais representativos.',
+               'Around 70 authored flows delivered. The three systems below are the most representative.'),
     diagramNote: pair(
       'Os diagramas foram redesenhados para este site. Capturas do editor e arquivos de exportação não são publicados: carregam nomes de nó, credenciais e endereços internos.',
       'The diagrams were redrawn for this site. Editor screenshots and export files are never published: they carry node names, credentials and internal addresses.'

@@ -141,6 +141,17 @@ function categories() {
   return [t(CONTENT.ui.all), ...seen];
 }
 
+function renderRoles() {
+  $('#roles').innerHTML = CONTENT.experience.roles.map((r) => `
+    <li class="role">
+      <span class="role-period">${esc(t(r.period))}</span>
+      <div class="role-body">
+        <p class="role-title">${esc(t(r.role))} <span class="role-org">${esc(t(r.org))}</span></p>
+        <p class="role-detail">${esc(t(r.detail))}</p>
+      </div>
+    </li>`).join('');
+}
+
 function renderFilters(active) {
   $('#filters').innerHTML = categories().map((c) => `
     <button type="button" class="chip" data-filter="${esc(c)}" aria-pressed="${String(c === active)}">${esc(c)}</button>`).join('');
@@ -347,6 +358,7 @@ $('#theme-toggle').addEventListener('click', () => {
 function renderAll() {
   renderStaticText();
   renderFacts();
+  renderRoles();
   renderFilters(t(CONTENT.ui.all));
   renderSystems(null);
   renderExhibits();

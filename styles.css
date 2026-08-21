@@ -282,6 +282,25 @@ p { margin: 0; }
 .button-primary { background: var(--accent); color: #fff; }
 .button-primary:hover { background: var(--accent-ink); }
 
+
+/* -------------------------------------------------------- experiencia --- */
+/* Linha densa: periodo em mono, cargo, organizacao, uma linha de substancia.
+   Quatro cargos ocupam menos que um card de sistema. */
+
+.roles { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.role {
+  display: grid; grid-template-columns: 8rem 1fr; gap: 1.4rem;
+  padding: .85rem 0; border-bottom: 1px solid var(--rule); align-items: baseline;
+}
+.role-period {
+  font: .72rem/1.7 var(--mono); letter-spacing: .05em;
+  color: var(--ink-faint); font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.role-body { display: flex; flex-direction: column; gap: .15rem; }
+.role-title { font-size: .93rem; font-weight: 620; letter-spacing: -.01em; }
+.role-org { font-weight: 400; color: var(--accent); }
+.role-detail { font-size: .82rem; line-height: 1.55; color: var(--ink-soft); max-width: 80ch; }
+
 /* ------------------------------------------------------------- seções --- */
 
 .section { padding-block: 3.6rem; }
@@ -497,4 +516,40 @@ p { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* ------------------------------------------------------------ impressao --- */
+/* Ctrl+P entrega um curriculo limpo: sem cabecalho fixo, sem filtros, sem
+   seletor de idioma, sem trama de papel, e sem quebrar peca no meio. */
+
+@media print {
+  :root, :root[data-theme="dark"] {
+    --paper: #fff; --paper-edge: #fff; --surface: #fff; --well: #fff;
+    --ink: #000; --ink-soft: #333; --ink-faint: #555;
+    --rule: #ccc; --rule-strong: #888;
+    --accent: #000; --accent-ink: #000; --accent-soft: transparent; --accent-line: #888;
+    --stamp: #000; --stamp-soft: transparent; --shadow-sheet: none;
+    color-scheme: light;
+  }
+  @page { margin: 14mm; }
+
+  body::before, .masthead, .filters, .lang-switch, .icon-button,
+  .skip-link, .record-dialog, .system-open, .site-footer { display: none !important; }
+
+  body { font-size: 10.5pt; }
+  .shell { width: 100%; }
+  .section { padding-block: 1.1rem; }
+  .profile { padding-block: 0 1rem; border-bottom: 1px solid var(--rule-strong); }
+  .profile h1 { font-size: 20pt; }
+
+  .role, .system, .exhibit, .auto, .sheet, .term-block, .diagram, .process-step {
+    break-inside: avoid; page-break-inside: avoid;
+  }
+  .section-head { break-after: avoid; page-break-after: avoid; }
+  .system-grid { grid-template-columns: 1fr 1fr; }
+  .exhibit, .auto { grid-template-columns: 1fr; gap: 1rem; }
+  .exhibit-copy { position: static; }
+
+  a { color: #000; text-decoration: none; }
+  .profile-links a { border-bottom: 0; }
 }
