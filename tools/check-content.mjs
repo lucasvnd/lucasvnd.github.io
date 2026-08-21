@@ -7,9 +7,8 @@
  * Zero dependências, de propósito: o site não tem etapa de build e não vai
  * ganhar uma por causa de um teste.
  *
- * Cobre a falha silenciosa mais provável do projeto, conteúdo malformado
- * renderizando vazio na frente de um recrutador, e a mais grave: dado de
- * cliente escapando para um repositório público.
+ * Cobre a falha silenciosa mais provável do projeto: conteúdo malformado
+ * renderizando vazio na página.
  */
 
 import { readFileSync, existsSync } from 'node:fs';
@@ -86,9 +85,8 @@ for (const [i, a] of CONTENT.automations.items.entries()) {
 
 /* ------------------------------------- 4. rede de segurança de privacidade --- */
 
-/* A lista de termos proibidos NÃO pode viver no repositório: ela própria
-   publicaria os domínios e nomes de cliente que existe para esconder.
-   Mora em .scratch/, que está no .gitignore. Um termo por linha, # comenta. */
+/* Lista local de termos que não devem aparecer no conteúdo publicado.
+   Fica fora do versionamento. Um termo por linha, # comenta. */
 const listPath = join(root, '.scratch', 'forbidden.txt');
 let privacyChecked = false;
 
@@ -120,6 +118,6 @@ const projectCount = CONTENT.projects.length;
 const autoCount = CONTENT.automations.items.length;
 console.log(`\n  ✓ conteúdo íntegro: ${projectCount} sistemas, ${autoCount} automações, pt/en completos`);
 if (!privacyChecked) {
-  console.log('  ! .scratch/forbidden.txt ausente, verificação de privacidade NÃO rodou');
+  console.log('  ! lista local ausente, verificação de termos NÃO rodou');
 }
 console.log('');

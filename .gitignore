@@ -1,8 +1,7 @@
-# Anotações internas: spec, tickets e a lista de termos proibidos.
-# Contém nome de cliente e topologia interna. Este repositório é PÚBLICO.
+# Notas de trabalho locais
 .scratch/
 
-# Pré-visualização gerada (arquivo único, derivado)
+# Pre-visualizacao gerada (arquivo unico, derivado)
 preview.html
 
 # Sistema operacional / editor
