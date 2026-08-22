@@ -152,6 +152,17 @@ function renderRoles() {
     </li>`).join('');
 }
 
+function renderEducation() {
+  $('#education').innerHTML = CONTENT.education.items.map((e) => `
+    <li class="role">
+      <span class="role-period">${esc(t(e.period))}</span>
+      <div class="role-body">
+        <p class="role-title">${esc(t(e.course))} <span class="role-org">${esc(t(e.org))}</span></p>
+        <p class="role-detail">${esc(t(e.detail))}</p>
+      </div>
+    </li>`).join('');
+}
+
 function renderFilters(active) {
   $('#filters').innerHTML = categories().map((c) => `
     <button type="button" class="chip" data-filter="${esc(c)}" aria-pressed="${String(c === active)}">${esc(c)}</button>`).join('');
@@ -359,6 +370,7 @@ function renderAll() {
   renderStaticText();
   renderFacts();
   renderRoles();
+  renderEducation();
   renderFilters(t(CONTENT.ui.all));
   renderSystems(null);
   renderExhibits();

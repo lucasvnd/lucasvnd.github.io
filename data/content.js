@@ -27,6 +27,7 @@ export const CONTENT = {
   nav: {
     experience: pair('Experiência', 'Experience'),
     systems: pair('Sistemas', 'Systems'),
+    education: pair('Formação', 'Education'),
     method: pair('Método', 'Method'),
     automations: pair('Automações', 'Automation'),
     contact: pair('Contato', 'Contact')
@@ -145,6 +146,29 @@ export const CONTENT = {
           'Dimension Data na Nova Zelândia; Gávea Investments, BTG Pactual, Scopus, Wittel e Consulado Britânico no Brasil.',
           'Dimension Data in New Zealand; Gávea Investments, BTG Pactual, Scopus, Wittel and the British Consulate General in Brazil.'
         )
+      }
+    ]
+  },
+
+  /* Formacao: espelha exatamente o que o LinkedIn ja mostra publicamente. */
+  education: {
+    title: pair('Formação', 'Education'),
+    note: pair('Formação em tecnologia da informação e comunicação, na Nova Zelândia e no Brasil.',
+               'Education in information and communication technology, in New Zealand and Brazil.'),
+    items: [
+      {
+        period: pair('2015 - 2016', '2015 - 2016'),
+        course: pair('Pós-graduação, Graduate Diploma em Tecnologias da Informação e Comunicação',
+                     'Post Degree, Graduate Diploma in Information and Communication Technologies'),
+        org: 'Manukau Institute of Technology',
+        detail: pair('Nova Zelândia.', 'New Zealand.')
+      },
+      {
+        period: pair('2008 - 2011', '2008 - 2011'),
+        course: pair('Tecnologia em Redes de Computadores, Redes de Computadores e Telecomunicações',
+                     'Computer Networks Technologies, Computer Systems Networking and Telecommunications'),
+        org: 'Instituto Universitário SENAC',
+        detail: pair('Brasil. Curso concluído.', 'Brazil. Completed.')
       }
     ]
   },
