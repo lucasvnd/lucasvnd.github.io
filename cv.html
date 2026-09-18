@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lucas Nishimura — Currículo</title>
+<meta name="description" content="Currículo de Lucas Nishimura: segurança da informação, automação e desenvolvimento assistido por IA. Versão em PDF de uma folha A4." />
+<meta name="author" content="Lucas Nishimura" />
+<link rel="canonical" href="https://lucasvnd.github.io/cv.html" />
+
+<meta property="og:type" content="profile" />
+<meta property="og:site_name" content="Lucas Nishimura" />
+<meta property="og:title" content="Lucas Nishimura — Currículo" />
+<meta property="og:description" content="Segurança da informação, automação e desenvolvimento assistido por IA." />
+<meta property="og:url" content="https://lucasvnd.github.io/cv.html" />
+<meta property="og:image" content="https://lucasvnd.github.io/og.png" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2328518C'/%3E%3Cpath d='M8 7h3v14h8v3H8z' fill='%23fff'/%3E%3Crect x='19' y='7' width='5' height='3' fill='%23fff'/%3E%3C/svg%3E" />
+<meta name="theme-color" content="#EDEDE7" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#15161A" media="(prefers-color-scheme: dark)" />
+
+<link rel="stylesheet" href="./styles.css" />
+<link rel="stylesheet" href="./cv.css" />
+
+<script>
+  /* Mesmo pré-ajuste do portfólio: tema e idioma antes da primeira pintura,
+     para não piscar o tema errado nem o idioma errado. */
+  (function () {
+    try {
+      var t = localStorage.getItem('portfolio-theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      var l = new URLSearchParams(location.search).get('lang') || localStorage.getItem('portfolio-lang');
+      if (l === 'en' || l === 'pt') document.documentElement.lang = l === 'en' ? 'en' : 'pt-BR';
+    } catch (e) { /* localStorage bloqueado: os padrões seguem valendo */ }
+  })();
+</script>
+</head>
+
+<body class="cv-page">
+
+<!-- Barra de ferramentas: só existe na tela. O papel não a imprime. -->
+<div class="cv-bar">
+  <a class="cv-back" href="./index.html">
+    <span aria-hidden="true">←</span> <span data-i18n="cv.backLabel">Portfólio</span>
+  </a>
+  <div class="cv-bar-tools">
+    <div class="lang-switch" id="lang-switch" role="group" aria-label="Idioma / Language">
+      <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <button type="button" class="icon-button" id="theme-toggle" aria-label="Alternar tema">
+      <svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4">
+        <circle cx="8" cy="8" r="4" /><path d="M8 .8v1.6M8 13.6v1.6M.8 8h1.6M13.6 8h1.6M2.9 2.9l1.1 1.1M12 12l1.1 1.1M13.1 2.9L12 4M4 12l-1.1 1.1" />
+      </svg>
+    </button>
+    <a class="cv-action" id="cv-download" href="./cv/lucas-nishimura-cv-pt.pdf" download data-i18n="cv.download">Baixar PDF</a>
+    <button type="button" class="cv-action cv-action-ghost" id="cv-print" data-i18n="cv.print">Imprimir</button>
+  </div>
+</div>
+
+<main class="sheet-a4" id="cv">
+  <header class="cv-head">
+    <div class="cv-head-main">
+      <h1>Lucas Nishimura</h1>
+      <p class="cv-role" data-i18n="profile.role"></p>
+    </div>
+    <ul class="cv-contact" id="cv-contact"></ul>
+  </header>
+
+  <section class="cv-block">
+    <h2 data-i18n="cv.profileTitle"></h2>
+    <p class="cv-profile" data-i18n="profile.bio"></p>
+    <dl class="cv-facts" id="cv-facts" aria-label="Números"></dl>
+  </section>
+
+  <section class="cv-block">
+    <h2 data-i18n="experience.title"></h2>
+    <ol class="cv-list" id="cv-experience"></ol>
+  </section>
+
+  <section class="cv-block">
+    <h2 data-i18n="cv.systemsTitle"></h2>
+    <p class="cv-note" data-i18n="cv.systemsNote"></p>
+    <ul class="cv-systems" id="cv-systems"></ul>
+  </section>
+
+  <section class="cv-block">
+    <h2 data-i18n="cv.automationsTitle"></h2>
+    <ul class="cv-autos" id="cv-automations"></ul>
+  </section>
+
+  <section class="cv-block">
+    <h2 data-i18n="education.title"></h2>
+    <ol class="cv-list" id="cv-education"></ol>
+  </section>
+
+  <section class="cv-block">
+    <h2 data-i18n="cv.skillsTitle"></h2>
+    <dl class="cv-skills" id="cv-skills"></dl>
+  </section>
+
+  <footer class="cv-foot">
+    <span data-i18n="cv.footerNote"></span>
+  </footer>
+</main>
+
+<noscript>
+  <p style="padding:2rem;text-align:center">Esta página monta o currículo nos dois idiomas com JavaScript. Escreva para lucasmrnbr@gmail.com.</p>
+</noscript>
+
+<script type="module" src="./cv.js"></script>
+</body>
+</html>

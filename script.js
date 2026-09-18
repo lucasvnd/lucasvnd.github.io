@@ -286,7 +286,10 @@ function renderLinks() {
   const { email, linkedin } = CONTENT.identity;
   const mail = `<a href="mailto:${esc(email)}">${esc(email)}</a>`;
   const li = `<a href="${esc(linkedin)}" target="_blank" rel="noopener noreferrer">linkedin.com/in/lucas-nishimura</a>`;
-  $('#profile-links').innerHTML = `<li>${mail}</li><li>${li}</li>`;
+  /* Aponta para o PDF, não para a página: quem clica num link escrito "(PDF)"
+     espera o arquivo. A página do currículo fica no menu, ao lado das seções. */
+  const cv = `<a href="./cv/lucas-nishimura-cv-${lang}.pdf" download>${esc(t(CONTENT.cv.linkLabel))}</a>`;
+  $('#profile-links').innerHTML = `<li>${mail}</li><li>${li}</li><li>${cv}</li>`;
   $('#footer-contact').innerHTML = `Lucas Nishimura · ${mail}`;
 }
 

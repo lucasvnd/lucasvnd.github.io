@@ -31,9 +31,11 @@ jobs:
       # publicar "." levaria junto tools/ e qualquer anotação interna.
       - name: Montar o site
         run: |
-          mkdir -p _site/data
+          mkdir -p _site/data _site/cv
           cp index.html 404.html styles.css script.js _site/
+          cp cv.html cv.css cv.js _site/
           cp data/content.js _site/data/
+          cp cv/*.pdf _site/cv/
           touch _site/.nojekyll
           if [ -d assets ]; then cp -r assets _site/; fi
           if [ -f og.png ]; then cp og.png _site/; fi

@@ -20,6 +20,10 @@ export const CONTENT = {
     name: 'Lucas Nishimura',
     handle: 'lucasvnd',
     email: 'lucasmrnbr@gmail.com',
+    location: pair('São Paulo, SP — Brasil', 'São Paulo, Brazil'),
+    /* Telefone não mora aqui: este arquivo é publicado. Ele fica em
+       .scratch/contato.json, fora do git, e só entra na cópia do currículo
+       que tools/build-cv.mjs gera para você anexar em e-mail. */
     linkedin: 'https://www.linkedin.com/in/lucas-nishimura',
     role: pair('Desenvolvimento assistido por IA', 'AI-assisted development')
   },
@@ -171,6 +175,62 @@ export const CONTENT = {
         detail: pair('Brasil. Curso concluído.', 'Brazil. Completed.')
       }
     ]
+  },
+
+  /* Currículo: a mesma matéria-prima da página, recortada para caber numa
+     folha A4. Nada aqui é declaração nova — é seleção do que já está acima. */
+  cv: {
+    title: pair('Currículo', 'Résumé'),
+    subtitle: pair('Resumo em duas páginas. O detalhamento técnico fica no portfólio.',
+                   'A two-page summary. The technical detail stays in the portfolio.'),
+    download: pair('Baixar PDF', 'Download PDF'),
+    print: pair('Imprimir', 'Print'),
+    backLabel: pair('Portfólio', 'Portfolio'),
+    linkLabel: pair('Currículo (PDF)', 'Résumé (PDF)'),
+    profileTitle: pair('Perfil', 'Profile'),
+    systemsTitle: pair('Sistemas entregues', 'Systems delivered'),
+    systemsNote: pair('2025 - 2026, sanitizados: sem código, sem credenciais, sem dados de clientes. Clientes por setor.',
+                      '2025 - 2026, sanitized: no code, no credentials, no client data. Clients by sector.'),
+    automationsTitle: pair('Automações', 'Automation'),
+    skillsTitle: pair('Competências', 'Skills'),
+    skills: [
+      {
+        label: pair('Segurança da informação', 'Information security'),
+        items: ['ISO 27001', 'NIST CSF', 'Entra ID', 'Active Directory',
+                pair('Gestão de identidades e acessos', 'Identity and access management'),
+                pair('Resposta a incidentes', 'Incident response'),
+                pair('Políticas, auditoria e conformidade', 'Policy, audit and compliance')]
+      },
+      {
+        label: pair('Desenvolvimento', 'Development'),
+        items: ['Next.js', 'React', 'TypeScript', 'Node.js', 'Python', 'Bun', 'Hono', 'tRPC', 'Prisma']
+      },
+      {
+        label: pair('Dados e infraestrutura', 'Data and infrastructure'),
+        items: ['PostgreSQL', 'Supabase', 'SQLite', 'Redis', 'Docker', 'Alembic', 'Leaflet',
+                pair('APIs REST e integração com terceiros', 'REST APIs and third-party integration')]
+      },
+      {
+        label: pair('Automação e IA', 'Automation and AI'),
+        items: ['n8n', pair('Agentes de IA', 'AI agents'),
+                pair('Desenvolvimento assistido por IA', 'AI-assisted development'),
+                pair('Telemetria de custo de IA', 'AI cost telemetry')]
+      },
+      {
+        label: pair('Método', 'Method'),
+        items: [pair('Registros de decisão de arquitetura', 'Architecture decision records'),
+                pair('Glossário de domínio versionado', 'Versioned domain glossary'),
+                pair('Verificação no navegador', 'Browser verification'), 'Playwright', 'Git']
+      },
+      {
+        label: pair('Idiomas', 'Languages'),
+        items: [pair('Português (nativo)', 'Portuguese (native)'),
+                pair('Inglês (nativo)', 'English (native)'),
+                pair('Espanhol (básico)', 'Spanish (basic)')]
+      }
+    ],
+    footerNote: pair('Portfólio com o detalhamento técnico de cada sistema: lucasvnd.github.io',
+                     'Portfolio with the technical detail of each system: lucasvnd.github.io')
   },
 
   systems: {

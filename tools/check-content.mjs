@@ -114,6 +114,21 @@ if (existsSync(listPath)) {
   privacyChecked = true;
 }
 
+/* --------------------------------------------- 5. PDF do currículo --- */
+
+/* Não falha: o site publica sem o PDF. Mas um currículo em PDF que não bate
+   com a página é pior do que não ter PDF, então isso precisa gritar. */
+const { fingerprint, SOURCES } = await import('./build-cv.mjs').catch(() => ({}));
+let cvStale = false;
+
+if (typeof fingerprint === 'function') {
+  const stampPath = join(root, 'cv', '.stamp');
+  const pdfs = ['pt', 'en'].map((l) => join(root, 'cv', `lucas-nishimura-cv-${l}.pdf`));
+  const missing = pdfs.filter((f) => !existsSync(f));
+  const stamp = existsSync(stampPath) ? readFileSync(stampPath, 'utf8').trim() : '';
+  cvStale = missing.length > 0 || stamp !== fingerprint();
+}
+
 /* -------------------------------------------------------------- saída --- */
 
 if (problems.length) {
@@ -126,6 +141,10 @@ if (problems.length) {
 const projectCount = CONTENT.projects.length;
 const autoCount = CONTENT.automations.items.length;
 console.log(`\n  ✓ conteúdo íntegro: ${projectCount} sistemas, ${autoCount} automações, pt/en completos`);
+if (cvStale) {
+  console.log(`  ! o PDF do currículo está desatualizado: rode "node tools/build-cv.mjs"`);
+  console.log(`    (fontes: ${SOURCES.join(', ')})`);
+}
 if (!privacyChecked) {
   console.log('  ! lista local ausente, verificação de termos NÃO rodou');
 }
